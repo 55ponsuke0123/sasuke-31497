@@ -5,14 +5,22 @@
        SASUKE<div class='sub-title'>作業療法評価アプリ</div>
       </div>
     </div>
-  </div>
+  <div class='side-bar-contents'>
+      <% if user_signed_in? %>
+       <% @patients.each do |patient| %>
+        <%= link_to "#{patient.name}さん", patient_path(patient.id), class: "patient-detail" %><br />
+      <% end %>
+    <% end %>
+    </div>
+    </div>
+
   <div class='main-contents'>
    <div class="main-header">
     <div class="main-header-right">
     <% if user_signed_in? %>  
       <div class="menu-btn">
         <div class="menu-name-1">
-       <%= link_to '患者登録', "#", class: "patient" %>
+       <%= link_to '患者登録', new_patient_path, class: "patient" %>
       </div>
       </div>
       <div class="menu-btn">

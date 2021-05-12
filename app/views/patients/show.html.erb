@@ -1,0 +1,81 @@
+<div class="patient-show">
+  <div class="patient-box">
+    <h4 class="name">
+      <%= @patient.name %>
+    </h4>
+
+
+    <div class="patient-explain-box">
+      <span><%= @patient.disease_name %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-patient">年齢</th>
+          <td class="detail-value"><%= @patient.age %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">郵便番号</th>
+          <td class="detail-value"><%= @patient.postal_code %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">住所</th>
+          <td class="detail-value"><%= @patient.address %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">同居家族</th>
+          <td class="detail-value"><%= @patient.family %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">既往歴</th>
+          <td class="detail-value"><%= @patient.medical_history %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">手術歴</th>
+          <td class="detail-value"><%= @patient.surgical_history %></td>
+        </tr>
+      </tbody>
+      </table>
+      <table class="detail-table">
+      <tbody>
+      <tr>
+      <th class="detail-patient">寝返り</th>
+      <th class="detail-patient">ベッド上の移動</th>
+      <th class="detail-patient">起き上がり</th>
+      <th class="detail-patient">端座位</th>
+      <th class="detail-patient">起立</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.turn_over.name %></td>
+      <td class="detail-value"><%= @patient.moving_on_bed.name %></td>
+      <td class="detail-value"><%= @patient.get_up.name %></td>
+      <td class="detail-value"><%= @patient.sitting_position.name %></td>
+      <td class="detail-value"><%= @patient.stand_up.name %></td>
+      </tr>
+      <tr>
+      <th class="detail-patient">立位</th>
+      <th class="detail-patient">移乗</th>
+      <th class="detail-patient">車椅子操作</th>
+      <th class="detail-patient">歩行</th>
+      <th class="detail-patient">階段</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.standing.name %></td>
+      <td class="detail-value"><%= @patient.transfer.name %></td>
+      <td class="detail-value"><%= @patient.wheelchair_operation.name %></td>
+      <td class="detail-value"><%= @patient.walking.name %></td>
+      <td class="detail-value"><%= @patient.stairs.name %></td>
+      </tr>
+      </tbody>
+    </table>
+<% if user_signed_in? %> 
+         <div class='three-btn'>
+           <%= link_to "編集する", edit_patient_path(@patient), method: :get, class: "patient-edit-btn" %>
+           <%= button_to "削除する", patient_path(@patient), method: :delete, class: "patient-destroy" %> 
+          </div>
+        <% end %>  
+    <div class='second-action'>
+        <%=link_to "トップへ戻る", root_path, class: :top_btn%> 
+        </div>
+    </div>
+  </div>
