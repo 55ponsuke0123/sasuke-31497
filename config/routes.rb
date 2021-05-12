@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root to: "patients#index"
+  devise_for :users
+  root "patients#index"
+  resources :patients, only: [:new]
 end
