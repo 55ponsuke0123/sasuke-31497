@@ -336,14 +336,24 @@
          <table class="detail-table-7">
       <tbody>
       <tr>
-      <th class="detail-patient">部位</th>
-      <th class="detail-patient">出現時期</th>
+      <th colspan="3" class="detail-patient">部位</th>
+      </tr>
+      <tr>
+      <td colspan="3" class="detail-value"><%= f.text_field :pain_area, class:"input-default", id:"pain_area" %></td>
+      </tr>
+      <tr>
+      <th colspan="3" class="detail-patient">出現時期</th>
+      </tr>
+       <tr>
+      <td colspan="3" class="detail-value"><%= f.text_field :appearance_time, class:"input-default", id:"appearance_time" %></td>
+      </tr> 
+      <tr>
       <th class="detail-patient">程度（NRSなど）</th>
       <th class="detail-patient">器質的要因の有無</th>
       </tr>
       <tr>
-      <td class="detail-value"><%= f.text_field :pain_area, class:"input-default", id:"pain_area" %></td>
-      <td class="detail-value"><%= f.text_field :appearance_time, class:"input-default", id:"appearance_time" %></td>
+      
+      
       <td class="detail-value"><%= f.text_field :degree_of_pain, class:"input-default", id:"degree_of_pain" %></td>
       <td class="detail-value"><%= f.text_field :factor_tissue, class:"input-default", id:"factor_tissue" %></td>
       </tr>
@@ -358,10 +368,13 @@
       <tbody>
       <tr>
       <th class="detail-patient">部位と程度（検査方法など）</th>
+      </tr>
+      <tr>
+       <td class="detail-value"><%= f.text_field :paresthesia, class:"input-default", id:"paresthesia" %></td>
+      </tr>
       <th class="detail-patient">要因</th>
       </tr>
       <tr>
-      <td class="detail-value"><%= f.text_field :paresthesia, class:"input-default", id:"paresthesia" %></td>
       <td class="detail-value"><%= f.text_field :paresthesia_impact, class:"input-default", id:"paresthesia_impact" %></td>
       </tr>
    </tbody>
@@ -374,12 +387,15 @@
          <table class="detail-table-9">
       <tbody>
       <tr>
-      <th class="detail-patient">部位と程度</th>
+      <th colspan="3" class="detail-patient">部位と程度</th>
+      </tr>
+      <tr>
+      <td colspan="3" class="detail-value"><%= f.text_field :rom_part_degree, class:"input-default", id:"rom_part_degree" %></td>
+      </tr>
       <th class="detail-patient">関節包内運動</th>
       <th class="detail-patient">軟部組織</th>
       </tr>
       <tr>
-      <td class="detail-value"><%= f.text_field :rom_part_degree, class:"input-default", id:"rom_part_degree" %></td>
       <td class="detail-value"><%= f.collection_select(:joint_capsule_id, JointCapsule.all, :id, :name, {}, {class:"select-box", id:"patient-6-1"}) %></td>
       <td class="detail-value"><%= f.collection_select(:soft_tissue_id, SoftTissue.all, :id, :name, {}, {class:"select-box", id:"patient-6-2"}) %></td>
       </tr>
@@ -394,10 +410,14 @@
       <tbody>
       <tr>
       <th class="detail-patient">部位と程度（MMTなど）</th>
-      <th class="detail-patient">要因</th>
       </tr>
       <tr>
       <td class="detail-value"><%= f.text_field :muscle_weakness, class:"input-default", id:"muscle_weakness" %></td>
+      </tr>
+      <tr>
+      <th class="detail-patient">要因</th>
+      </tr>
+      <tr>
       <td class="detail-value"><%= f.text_field :muscle_weakness_factor, class:"input-default", id:"muscle_weakness_factor" %></td>
       </tr>
    </tbody>
@@ -408,26 +428,38 @@
         </div>
         <div class='detail-list-4'>
          <table class="detail-table-4">
-	<tbody>
+	  <tbody>
         <tr>
-          <th class="detail-patient">重心線</th>
+          <th colspan="2" class="detail-patient">重心線</th>
+          </tr>
+          <tr>
           <th class="detail-patient">足底との関係</th>
-          <td class="detail-value"><%= f.collection_select(:relationship_sole_id, RelationshipSole.all, :id, :name, {}, {class:"select-box", id:"patient-4-1"}) %></td>
           <th class="detail-patient">左右差</th>
+          </tr>
+          <tr>
+          <td class="detail-value"><%= f.collection_select(:relationship_sole_id, RelationshipSole.all, :id, :name, {}, {class:"select-box", id:"patient-4-1"}) %></td>
           <td class="detail-value"><%= f.collection_select(:left_right_difference_id, LeftRightDifference.all, :id, :name, {}, {class:"select-box", id:"patient-4-2"}) %></td>
         </tr>
         <tr>
-          <th class="detail-patient">アライメント</th>
+          <th colspan="2" class="detail-patient">アライメント</th>
+          </tr>
+          <tr>
           <th class="detail-patient">程度</th>
-          <td class="detail-value"><%= f.collection_select(:alignment_id, Alignment.all, :id, :name, {}, {class:"select-box", id:"patient-4-3"}) %></td>
           <th class="detail-patient">コメント</th>
+          </tr>
+          <tr>
+          <td class="detail-value"><%= f.collection_select(:alignment_id, Alignment.all, :id, :name, {}, {class:"select-box", id:"patient-4-3"}) %></td> 
           <td class="detail-value"><%= f.text_field :alignment_comment, class:"input-default", id:"alignment-comment" %></td>
         </tr>
         <tr>
-          <th class="detail-patient">筋緊張</th>
+          <th colspan="2" class="detail-patient">筋緊張</th>
+         </tr>
+         <tr>
           <th class="detail-patient">準備的姿勢筋緊張</th>
-          <td class="detail-value"><%= f.collection_select(:postural_tension_id, PosturalTension.all, :id, :name, {}, {class:"select-box", id:"patient-4-4"}) %></td>
           <th class="detail-patient">動作への影響</th>
+          </tr>
+          <tr>
+          <td class="detail-value"><%= f.collection_select(:postural_tension_id, PosturalTension.all, :id, :name, {}, {class:"select-box", id:"patient-4-4"}) %></td>
           <td class="detail-value"><%= f.collection_select(:impact_id, Impact.all, :id, :name, {}, {class:"select-box", id:"patient-4-5"}) %></td>
         </tr>
       </tbody>
@@ -456,8 +488,10 @@
       <td class="detail-value"><%= f.text_field :left_tmd, class:"input-default", id:"left_tmd" %></td>
       </tr>
       <tr>
-      <th class="detail-patient">機能的脚長差</th>
-      <td class="detail-value"><%= f.text_field :foot_length_comment, class:"input-default", id:"foot_length_comment" %></td>
+      <th colspan="3" class="detail-patient">機能的脚長差</th>
+      </tr>
+      <tr>
+      <td colspan="3" class="detail-value"><%= f.text_field :foot_length_comment, class:"input-default", id:"foot_length_comment" %></td>
       </tr>
    </tbody>
     </table>
@@ -469,32 +503,43 @@
          <table class="detail-table-5">
       <tbody>
         <tr>
-          <th class="detail-patient">歩行速度</th>
           <th class="detail-patient">速度</th>
+            <th class="detail-patient">最大２歩幅</th>
+         <th class="detail-patient">耐久性</th>
+          </tr>
+          <tr>
           <td class="detail-value"><%= f.text_field :speed, class:"input-default", id:"speed" %></td>
-          <th class="detail-patient">最大２歩幅</th>
           <td class="detail-value"><%= f.text_field :stride, class:"input-default", id:"stride" %></td>
-          <th class="detail-patient">耐久性</th>
           <td class="detail-value"><%= f.text_field :durability, class:"input-default", id:"durability" %></td>
         </tr>
         <tr>
-          <th class="detail-patient">歩行の動作</th>
+          <th colspan="2" class="detail-patient">歩行の動作</th>
+          </tr>
+          <tr>
           <th class="detail-patient">パターン</th>
-          <td class="detail-value"><%= f.text_field :walking_pattern, class:"input-default", id:"walking_pattern" %></td>
           <th class="detail-patient">非麻痺側下肢の位置</th>
+          </tr>
+          <tr>
+          <td class="detail-value"><%= f.text_field :walking_pattern, class:"input-default", id:"walking_pattern" %></td>
           <td class="detail-value"><%= f.text_field :foot_position, class:"input-default", id:"foot_position" %></td>
-        </tr>
+          </tr>
         <tr>
-          <th class="detail-patient">安定性</th>
+          <th colspan="3" class="detail-patient">安定性</th>
+          </tr>
+          <tr>
           <th class="detail-patient">身体的動揺</th>
-          <td class="detail-value"><%= f.collection_select(:upset_id, Upset.all, :id, :name, {}, {class:"select-box", id:"patient-5-1"}) %></td>
           <th class="detail-patient">冗長性</th>
-          <td class="detail-value"><%= f.collection_select(:redundancy_id, Redundancy.all, :id, :name, {}, {class:"select-box", id:"patient-5-2"}) %></td>
           <th class="detail-patient">応用性</th>
+          </tr>
+          <tr>
+          <td class="detail-value"><%= f.collection_select(:upset_id, Upset.all, :id, :name, {}, {class:"select-box", id:"patient-5-1"}) %></td>
+          <td class="detail-value"><%= f.collection_select(:redundancy_id, Redundancy.all, :id, :name, {}, {class:"select-box", id:"patient-5-2"}) %></td> 
           <td class="detail-value"><%= f.collection_select(:applicability_id, Applicability.all, :id, :name, {}, {class:"select-box", id:"patient-5-3"}) %></td>
         </tr>
         <tr>
-          <th class="detail-patient">歩容</th>
+          <th colspan="2" class="detail-patient">歩容</th>
+          </tr>
+          <tr>
           <th class="detail-patient">残存機能の活用性</th>
           <td class="detail-value"><%= f.collection_select(:gait_id, Gait.all, :id, :name, {}, {class:"select-box", id:"patient-5-4"}) %></td>
         </tr>
@@ -509,10 +554,14 @@
       <tbody>
         <tr>
           <th class="detail-patient">程度（長谷川式スケール、MMSEなど）</th>
+          </tr>
+          <tr>
           <td class="detail-value"><%= f.text_field :dementia_degree, class:"input-default", id:"dementia_degree" %></td>
         </tr>
         <tr>
           <th class="detail-patient">日常生活への影響</th>
+          </tr>
+          <tr>
           <td class="detail-value"><%= f.text_field :impact_daily_life, class:"input-default", id:"impact_daily_life" %></td>
         </tr>
       </tbody>
