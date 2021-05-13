@@ -22,6 +22,25 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
   end
 
+  def edit
+    @patient = Patient.find(params[:id])
+  end
+
+  def update
+    @patient = Patient.find(params[:id])
+    if @patient.update(patient_params)
+      redirect_to root_path
+     else
+     render :edit
+     end
+  end
+
+  def destroy
+    @patient = Patient.find(params[:id])
+    if @patient.destroy 
+      redirect_to root_path
+    end
+  end
   
   private 
 
@@ -37,6 +56,7 @@ class PatientsController < ApplicationController
            :disease_name,
             :medical_history,
              :surgical_history,
+             :image,
              :turn_over_id,
       :moving_on_bed_id,
       :get_up_id,

@@ -26,6 +26,9 @@
 }
 
 
+.click-upload {
+  text-align: center;
+}
 
 .patient-edit-btn {
   text-align: center;
@@ -76,6 +79,8 @@
   border: 1px solid #dedede;
   font-size: 14px;
 }
+
+
 
 .three-btn {
   display: flex;

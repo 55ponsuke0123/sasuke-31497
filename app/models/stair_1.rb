@@ -1,5 +1,6 @@
 class Stair1 < ActiveHash::Base
   self.data = [
+    { id: 0, name: '---' },
     { id: 1, name: '全介助（1点）' },
     { id: 2, name: '最大介助（２点）' },
     { id: 3, name: '重度介助（３点）' },

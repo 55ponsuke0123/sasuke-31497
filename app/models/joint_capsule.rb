@@ -1,5 +1,6 @@
 class JointCapsule < ActiveHash::Base
   self.data = [
+    { id: 0, name: '---' },
     { id: 1, name: '関節アライメント' },
     { id: 2, name: '副運動' },
     { id: 3, name: '協調性' },

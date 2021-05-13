@@ -1,5 +1,7 @@
 class GetUp < ActiveHash::Base
+
   self.data = [
+    { id: 0, name: '---' },
     { id: 1, name: '自立' },
     { id: 2, name: '見守り' },
     { id: 3, name: '軽度介助' },

@@ -5,7 +5,7 @@
     </div>
         
       
-        <%= form_with model: @patient, url: patients_path, class: 'new-patients-main', local: true do |f| %>
+        <%= form_with model: @patient, url: patient_path, class: 'new-patients-main', local: true do |f| %>
           <%#= render 'devise/shared/error_messages', model: f.object %>
       
       
@@ -441,8 +441,8 @@
       <th class="detail-patient">左TMD</th>
       </tr>
       <tr>
-      <td class="detail-value"><%= f.text_field :right_tmd, class:"input-default", id:"right_smd" %></td>
-      <td class="detail-value"><%= f.text_field :right_smd, class:"input-default", id:"right_smd" %></td>
+      <td class="detail-value"><%= f.text_field :right_tmd, class:"input-default", id:"right_tmd" %></td>
+      <td class="detail-value"><%= f.text_field :left_tmd, class:"input-default", id:"left_tmd" %></td>
       </tr>
       <tr>
       <th class="detail-patient">機能的脚長差</th>
@@ -531,16 +531,14 @@
       </div>
       <div class='therapist-comment'>
           <label class="form-text">その他（特記事項）</label>
-        </div>
         <%= f.text_field :others, class:"input-default", id:"others", placeholder:"例）禁忌事項等"%>
       </div>
       <div class='total-comment'>
           <label class="form-text">総括</label>
-        </div>
         <%= f.text_field :generalization, class:"input-default", id:"generalization", placeholder:"例）治療方針等"%>
       </div>
       <div class="green_btn">
-      <%= f.submit "登録する" ,class:"evaluation-btn" %>
+      <%= f.submit "編集する" ,class:"evaluation-btn" %>
       </div>
   <% end %>
   </div>

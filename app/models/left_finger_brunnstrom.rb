@@ -1,5 +1,6 @@
 class LeftFingerBrunnstrom < ActiveHash::Base
   self.data = [
+    { id: 0, name: '---' },
     { id: 1, name: 'ステージⅠ' },
     { id: 2, name: 'ステージⅡ' },
     { id: 3, name: 'ステージⅢ' },

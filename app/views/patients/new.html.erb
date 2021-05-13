@@ -91,6 +91,17 @@
         </div>
         <%= f.text_field :surgical_history, class:"input-default", id:"surgical_history", placeholder:"例）右股関節人工骨頭置換術"%>
       </div>
+      <div class="form-group">
+        <div class='form-text'>
+        画像等
+      </div>
+      <div class="click-upload">
+        <h4>
+          クリックしてファイルをアップロード
+        </h4>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
     </div>
     
 <div class='transaction-contents'>
@@ -441,8 +452,8 @@
       <th class="detail-patient">左TMD</th>
       </tr>
       <tr>
-      <td class="detail-value"><%= f.text_field :right_tmd, class:"input-default", id:"right_smd" %></td>
-      <td class="detail-value"><%= f.text_field :right_smd, class:"input-default", id:"right_smd" %></td>
+      <td class="detail-value"><%= f.text_field :right_tmd, class:"input-default", id:"right_tmd" %></td>
+      <td class="detail-value"><%= f.text_field :left_tmd, class:"input-default", id:"left_tmd" %></td>
       </tr>
       <tr>
       <th class="detail-patient">機能的脚長差</th>
@@ -507,10 +518,7 @@
       </tbody>
     </table>
       </div>
-        <div class='higher-brain-dysfunction-comment'>
-          <label class="form-text">高次脳機能障害</label>
-        </div>
-        <%= f.text_field :higher_brain_dysfunction_comment, class:"input-default", id:"higher_brain_dysfunction_comment", placeholder:"例）半側空間無視有り"%>
+        
       </div>
       <div class='form-11'>
           <label class="form-text">協調性</label>
@@ -531,12 +539,10 @@
       </div>
       <div class='therapist-comment'>
           <label class="form-text">その他（特記事項）</label>
-        </div>
         <%= f.text_field :others, class:"input-default", id:"others", placeholder:"例）禁忌事項等"%>
       </div>
       <div class='total-comment'>
           <label class="form-text">総括</label>
-        </div>
         <%= f.text_field :generalization, class:"input-default", id:"generalization", placeholder:"例）治療方針等"%>
       </div>
       <div class="green_btn">

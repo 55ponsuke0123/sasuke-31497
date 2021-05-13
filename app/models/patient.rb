@@ -1,5 +1,6 @@
 class Patient < ApplicationRecord
   belongs_to :user
+  has_one_attached :image
 
   validates :sex_id, presence: true
 
@@ -12,6 +13,12 @@ class Patient < ApplicationRecord
           validates :disease_name
           validates :medical_history        
           end
+
+          def was_attached?
+            self.image.attached?
+          end
+
+          
           extend ActiveHash::Associations::ActiveRecordExtensions
           belongs_to :turn_over
           belongs_to :moving_on_bed

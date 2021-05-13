@@ -1,5 +1,6 @@
 class SoftTissue < ActiveHash::Base
   self.data = [
+    { id: 0, name: '---' },
     { id: 1, name: '伸張性' },
     { id: 2, name: '筋緊張' },
     { id: 3, name: '可動性' },

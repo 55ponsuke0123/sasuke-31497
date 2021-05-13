@@ -8,12 +8,24 @@
     <div class="patient-explain-box">
       <span><%= @patient.disease_name %></span>
     </div>
+    <div class='form-1-1'>
+        <label class="form-text">基本情報</label>
+        </div>
     <table class="detail-table">
       <tbody>
         <tr>
           <th class="detail-patient">年齢</th>
           <td class="detail-value"><%= @patient.age %></td>
         </tr>
+        <tr>
+          <th class="detail-patient">身長</th>
+          <td class="detail-value"><%= @patient.height %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">体重</th>
+          <td class="detail-value"><%= @patient.weight %></td>
+        </tr>
+
         <tr>
           <th class="detail-patient">郵便番号</th>
           <td class="detail-value"><%= @patient.postal_code %></td>
@@ -36,7 +48,16 @@
         </tr>
       </tbody>
       </table>
-      <table class="detail-table">
+      <div class="form-text">画像等</div>
+      <div class="item-img-content">
+      <%= image_tag @patient.image ,class:"patient-box-img" if @patient.image.attached? %>
+    </div>
+    </div>
+      <div class='form-1'>
+          <label class="form-text">基本動作</label>
+        </div>
+        <div class='detail-list-1'>
+      <table class="detail-table-1">
       <tbody>
       <tr>
       <th class="detail-patient">寝返り</th>
@@ -66,6 +87,419 @@
       <td class="detail-value"><%= @patient.walking.name %></td>
       <td class="detail-value"><%= @patient.stairs.name %></td>
       </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class='form-2'>
+        <label class="form-text">ADL -Barthel Index-</label>
+        </div>
+        <div class='detail-list-2'>
+    <table class="detail-table-2">
+      <tbody>
+      <tr>
+          <th class="detail-patient">食事</th>
+          <td class="detail-value"><%= @patient.meal_2.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">移乗</th>
+          <td class="detail-value"><%= @patient.transfer_2.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">整容</th>
+          <td class="detail-value"><%= @patient.shape_2.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">トイレ動作</th>
+          <td class="detail-value"><%= @patient.toilet_2.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">入浴</th>
+          <td class="detail-value"><%= @patient.balneum_2.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">歩行</th>
+          <td class="detail-value"><%= @patient.walking_2.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">階段昇降</th>
+          <td class="detail-value"><%= @patient.stair_2.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">着替え</th>
+          <td class="detail-value"><%= @patient.changing_clothes.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">排尿</th>
+          <td class="detail-value"><%= @patient.urination_2.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">排便</th>
+          <td class="detail-value"><%= @patient.defecation_2.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">合計</th>
+          <td class="detail-value"><%= @patient.total_1 %></td>
+        </tr>
+      </tbody>
+      </table>
+      </div>
+      <div class='form-3'>
+          <label class="form-text">ADL -機能的自立度評価表（FIM）-</label>
+        </div>
+         <div class='detail-list-3'>
+<table class="detail-table-3">
+      <tbody>
+        <tr>
+          <th rowspan="14" class="detail-patient">運動項目</th>
+          <th rowspan="7" class="detail-patient">セルフケア</th>
+          <th class="detail-patient">食事</th>
+          <td class="detail-value"><%= @patient.meal_1.name %></td>
+        </tr>
+        <tr>
+        <tr>
+          <th class="detail-patient">整容</th>
+          <td class="detail-value"><%= @patient.shape_1.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">清拭（入浴）</th>
+          <td class="detail-value"><%= @patient.balneum_1.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">更衣（上）</th>
+          <td class="detail-value"><%= @patient.outer_wear.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">更衣（下）</th>
+          <td class="detail-value"><%= @patient.outer_wear.name %></td>
+        </tr>
+       <tr>
+          <th class="detail-patient">トイレ動作</th>
+          <td class="detail-value"><%= @patient.toilet_1.name %></td>
+        </tr>
+        <tr>
+        <th rowspan="2" class="detail-patient">排泄コントロール</th>
+          <th class="detail-patient">排尿コントロール</th>
+          <td class="detail-value"><%= @patient.urination_1.name %></td>
+          </tr>
+          <tr>
+          <th class="detail-patient">排便コントロール</th>
+          <td class="detail-value"><%= @patient.defecation_1.name %></td>
+        </tr>
+      <tr>
+        <th rowspan="3" class="detail-patient">移乗</th>
+          <th class="detail-patient">ベッド・車椅子移乗</th>
+          <td class="detail-value"><%= @patient.bed_transfer_1.name %></td>
+        </tr>
+       <tr>
+          <th class="detail-patient">トイレ移乗</th>
+          <td class="detail-value"><%= @patient.toilet_transfer_1.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">浴槽移乗</th>
+          <td class="detail-value"><%= @patient.bathtub_transfer_1.name %></td>
+        </tr>
+       <tr>
+        <th rowspan="2" class="detail-patient">移動</th>
+          <th class="detail-patient">歩行・車椅子</th>
+          <td class="detail-value"><%= @patient.walking_1.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">階段</th>
+          <td class="detail-value"><%= @patient.stair_1.name %></td>
+        </tr>
+        <tr>
+          <th rowspan="5" class="detail-patient">認知項目</th>
+          <th rowspan="2" class="detail-patient">コミュニケーション</th>
+          <th class="detail-patient">理解</th>
+          <td class="detail-value"><%= @patient.understanding_1.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">表出</th>
+          <td class="detail-value"><%= @patient.expression_1.name %></td>
+        </tr>
+        <tr>
+         <th rowspan="3" class="detail-patient">社会的認知</th>
+          <th class="detail-patient">社会的交流</th>
+          <td class="detail-value"><%= @patient.alternating_current_1.name %></td>
+         </tr><tr>
+          <th class="detail-patient">問題解決</th>
+          <td class="detail-value"><%= @patient.solving_1.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">記憶</th>
+          <td class="detail-value"><%= @patient.memory_1.name %></td>
+        </tr>
+         <tr>
+          <th colspan="3" class="detail-patient">合計</th>
+          <td class="detail-value"><%= @patient.total_2 %></td>
+        </tr>
+      </tbody>
+      </table>
+      </div>
+        <div class='form-12'>
+          <label class="form-text">BrunnstromStage</label>
+        </div>
+        <div class='detail-list-12'>
+         <table class="detail-table-12">
+      <tbody>
+      <tr>
+      <th class="detail-patient">右上肢</th>
+      <th class="detail-patient">左上肢</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.right_upper_limb_brunnstrom.name %></td>
+      <td class="detail-value"><%= @patient.left_upper_limb_brunnstrom.name %></td>
+      </tr>
+      <tr>
+      <th class="detail-patient">右下肢</th>
+      <th class="detail-patient">左下肢</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.right_lower_limb_brunnstrom.name %></td>
+      <td class="detail-value"><%= @patient.left_lower_limb_brunnstrom.name %></td>
+      </tr>
+      <tr>
+      <th class="detail-patient">右手指</th>
+      <th class="detail-patient">左手指</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.right_finger_brunnstrom.name %></td>
+      <td class="detail-value"><%= @patient.left_finger_brunnstrom.name %></td>
+      </tr>
+   </tbody>
+    </table>
+      </div>
+      <div class='form-7'>
+          <label class="form-text">疼痛</label>
+        </div>
+        <div class='detail-list-7'>
+         <table class="detail-table-7">
+      <tbody>
+      <tr>
+      <th class="detail-patient">部位</th>
+      <th class="detail-patient">出現時期</th>
+      <th class="detail-patient">程度（NRSなど）</th>
+      <th class="detail-patient">器質的要因の有無</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.pain_area %></td>
+      <td class="detail-value"><%= @patient.appearance_time %></td>
+      <td class="detail-value"><%= @patient.degree_of_pain %></td>
+      <td class="detail-value"><%= @patient.factor_tissue %></td>
+      </tr>
+   </tbody>
+    </table>
+      </div>
+      <div class='form-8'>
+          <label class="form-text">感覚異常</label>
+        </div>
+        <div class='detail-list-8'>
+         <table class="detail-table-8">
+      <tbody>
+      <tr>
+      <th class="detail-patient">部位と程度（検査方法など）</th>
+      <th class="detail-patient">要因</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.paresthesia %></td>
+      <td class="detail-value"><%= @patient.paresthesia_impact %></td>
+      </tr>
+   </tbody>
+    </table>
+      </div>
+      <div class='form-9'>
+          <label class="form-text">可動域制限</label>
+        </div>
+        <div class='detail-list-9'>
+         <table class="detail-table-9">
+      <tbody>
+      <tr>
+      <th class="detail-patient">部位と程度</th>
+      <th class="detail-patient">関節包内運動</th>
+      <th class="detail-patient">軟部組織</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.rom_part_degree %></td>
+      <td class="detail-value"><%= @patient.joint_capsule.name %></td>
+      <td class="detail-value"><%= @patient.soft_tissue.name %></td>
+      </tr>
+   </tbody>
+    </table>
+      </div>
+      <div class='form-10'>
+          <label class="form-text">筋力低下</label>
+        </div>
+        <div class='detail-list-10'>
+         <table class="detail-table-10">
+      <tbody>
+      <tr>
+      <th class="detail-patient">部位と程度（MMTなど）</th>
+      <th class="detail-patient">要因</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.muscle_weakness %></td>
+      <td class="detail-value"><%= @patient.muscle_weakness_factor %></td>
+      </tr>
+   </tbody>
+    </table>
+      </div>
+        <div class='form-4'>
+          <label class="form-text">姿勢</label>
+        </div>
+        <div class='detail-list-4'>
+         <table class="detail-table-4">
+	<tbody>
+        <tr>
+          <th class="detail-patient">重心線</th>
+          <th class="detail-patient">足底との関係</th>
+          <td class="detail-value"><%= @patient.relationship_sole.name %></td>
+          <th class="detail-patient">左右差</th>
+          <td class="detail-value"><%= @patient.left_right_difference.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">アライメント</th>
+          <th class="detail-patient">程度</th>
+          <td class="detail-value"><%= @patient.alignment.name %></td>
+          <th class="detail-patient">コメント</th>
+          <td class="detail-value"><%= @patient.alignment_comment %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">筋緊張</th>
+          <th class="detail-patient">準備的姿勢筋緊張</th>
+          <td class="detail-value"><%= @patient.postural_tension.name %></td>
+          <th class="detail-patient">動作への影響</th>
+          <td class="detail-value"><%= @patient.impact.name %></td>
+        </tr>
+      </tbody>
+      </table>
+        </div>
+        <div class='form-13'>
+          <label class="form-text">脚長差</label>
+        </div>
+        <div class='detail-list-13'>
+         <table class="detail-table-13">
+      <tbody>
+      <tr>
+      <th class="detail-patient">右SMD</th>
+      <th class="detail-patient">左SMD</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.right_smd %></td>
+      <td class="detail-value"><%= @patient.left_smd %></td>
+      </tr>
+      <tr>
+      <th class="detail-patient">右TMD</th>
+      <th class="detail-patient">左TMD</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.right_tmd %></td>
+      <td class="detail-value"><%= @patient.left_tmd %></td>
+      </tr>
+      <tr>
+      <th class="detail-patient">機能的脚長差</th>
+      <td class="detail-value"><%= @patient.foot_length_comment %></td>
+      </tr>
+   </tbody>
+    </table>
+      </div>
+        <div class='form-5'>
+          <label class="form-text">歩行</label>
+        </div>
+        <div class='detail-list-5'>
+         <table class="detail-table-5">
+      <tbody>
+        <tr>
+          <th class="detail-patient">歩行速度</th>
+          <th class="detail-patient">速度</th>
+          <td class="detail-value"><%= @patient.speed %></td>
+          <th class="detail-patient">最大２歩幅</th>
+          <td class="detail-value"><%= @patient.stride %></td>
+          <th class="detail-patient">耐久性</th>
+          <td class="detail-value"><%= @patient.durability %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">歩行の動作</th>
+          <th class="detail-patient">パターン</th>
+          <td class="detail-value"><%= @patient.walking_pattern %></td>
+          <th class="detail-patient">非麻痺側下肢の位置</th>
+          <td class="detail-value"><%= @patient.foot_position %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">安定性</th>
+          <th class="detail-patient">身体的動揺</th>
+          <td class="detail-value"><%= @patient.upset.name %></td>
+          <th class="detail-patient">冗長性</th>
+          <td class="detail-value"><%= @patient.redundancy.name %></td>
+          <th class="detail-patient">応用性</th>
+          <td class="detail-value"><%= @patient.applicability.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">歩容</th>
+          <th class="detail-patient">残存機能の活用性</th>
+          <td class="detail-value"><%= @patient.gait.name %></td>
+        </tr>
+      </tbody>
+</table>
+      </div>
+      <div class='form-6'>
+          <label class="form-text">認知・精神機能</label>
+        </div>
+        <div class='detail-list-6'>
+         <table class="detail-table-6">
+      <tbody>
+        <tr>
+          <th class="detail-patient">程度（長谷川式スケール、MMSEなど）</th>
+          <td class="detail-value"><%= @patient.dementia_degree %></td>
+        </tr>
+        <tr>
+          <th class="detail-patient">日常生活への影響</th>
+          <td class="detail-value"><%= @patient.impact_daily_life %></td>
+        </tr>
+      </tbody>
+    </table>
+      </div>
+        <div class='higher-brain-dysfunction-comment'>
+          <label class="form-text">高次脳機能障害</label>
+        <table class="detail-table-14">
+      <tbody>
+        <tr>
+          <td class="detail-value"><%= @patient.higher_brain_dysfunction_comment %></td>
+        </tr>
+      </tbody>
+    </table>
+      <div class='form-11'>
+          <label class="form-text">協調性</label>
+        </div>
+        <div class='detail-list-11'>
+         <table class="detail-table-11">
+      <tbody>
+      <tr>
+      <th class="detail-patient">部位と程度</th>
+      <th class="detail-patient">要因</th>
+      </tr>
+      <tr>
+      <td class="detail-value"><%= @patient.sense_cooperation %></td>
+      <td class="detail-value"><%= @patient.sense_cooperation_impact %></td>
+      </tr>
+   </tbody>
+    </table>
+      </div>
+      <div class='others'>
+          <label class="form-text">その他（特記事項）</label>
+        <table class="detail-table-15">
+      <tbody>
+        <tr>
+          <td class="detail-value"><%= @patient.others %></td>
+        </tr>
+      </tbody>
+    </table>
+      <div class='generalization'>
+          <label class="form-text">総括</label>
+        <table class="detail-table-16">
+      <tbody>
+        <tr>
+          <td class="detail-value"><%= @patient.generalization %></td>
+        </tr>
       </tbody>
     </table>
 <% if user_signed_in? %> 
