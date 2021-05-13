@@ -102,7 +102,7 @@
         <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
-    </div>
+
     
 <div class='transaction-contents'>
   <div class='transaction-main'>
@@ -518,7 +518,9 @@
       </tbody>
     </table>
       </div>
-        
+        <div class='higher-brain-dysfunction-comment'>
+          <label class="form-text">高次脳機能障害</label>
+        <%= f.text_field :higher_brain_dysfunction_comment, class:"input-default", id:"higher_brain_dysfunction_comment", placeholder:"例）半側空間無視有り"%>
       </div>
       <div class='form-11'>
           <label class="form-text">協調性</label>

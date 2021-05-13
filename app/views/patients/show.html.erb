@@ -50,7 +50,7 @@
       </table>
       <div class="form-text">画像等</div>
       <div class="item-img-content">
-      <%= image_tag @patient.image ,class:"patient-box-img" if @patient.image.attached? %>
+      <%= image_tag @patient.image.variant(resize: '500x500'), class:"patient-box-img" if @patient.image.attached? %>
     </div>
     </div>
       <div class='form-1'>

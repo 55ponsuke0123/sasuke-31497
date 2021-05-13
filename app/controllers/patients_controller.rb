@@ -108,7 +108,7 @@ class PatientsController < ApplicationController
       :pain_area,
       :appearance_time,
       :degree_of_pain,
-       :factor_tissue_id,
+      :factor_tissue_id,
       :rom_part_degree,
       :joint_capsule_id,
       :soft_tissue_id,
