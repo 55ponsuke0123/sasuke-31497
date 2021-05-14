@@ -276,14 +276,24 @@
          <table class="detail-table-7">
       <tbody>
       <tr>
-      <th class="detail-patient">部位</th>
-      <th class="detail-patient">出現時期</th>
+      <th colspan="3" class="detail-patient">部位</th>
+      </tr>
+      <tr>
+      <td colspan="3" class="detail-value"><%= @patient.pain_area %></td>
+     </tr>
+     <tr>
+      <th colspan="3" class="detail-patient">出現時期</th>
+      </tr>
+      <tr>
+      <td colspan="3" class="detail-value"><%= @patient.appearance_time %></td>
+      </tr>
+      <tr>
       <th class="detail-patient">程度（NRSなど）</th>
       <th class="detail-patient">器質的要因の有無</th>
       </tr>
       <tr>
-      <td class="detail-value"><%= @patient.pain_area %></td>
-      <td class="detail-value"><%= @patient.appearance_time %></td>
+      
+      
       <td class="detail-value"><%= @patient.degree_of_pain %></td>
       <td class="detail-value"><%= @patient.factor_tissue %></td>
       </tr>
@@ -298,10 +308,13 @@
       <tbody>
       <tr>
       <th class="detail-patient">部位と程度（検査方法など）</th>
-      <th class="detail-patient">要因</th>
       </tr>
       <tr>
       <td class="detail-value"><%= @patient.paresthesia %></td>
+      </tr>
+      <th class="detail-patient">要因</th>
+      </tr>
+      <tr>
       <td class="detail-value"><%= @patient.paresthesia_impact %></td>
       </tr>
    </tbody>
@@ -314,12 +327,15 @@
          <table class="detail-table-9">
       <tbody>
       <tr>
-      <th class="detail-patient">部位と程度</th>
+      <th colspan="3" class="detail-patient">部位と程度</th>
+      </tr>
+      <tr>
+      <td colspan="3" class="detail-value"><%= @patient.rom_part_degree %></td>
+      </tr>
       <th class="detail-patient">関節包内運動</th>
       <th class="detail-patient">軟部組織</th>
       </tr>
       <tr>
-      <td class="detail-value"><%= @patient.rom_part_degree %></td>
       <td class="detail-value"><%= @patient.joint_capsule.name %></td>
       <td class="detail-value"><%= @patient.soft_tissue.name %></td>
       </tr>
@@ -334,10 +350,15 @@
       <tbody>
       <tr>
       <th class="detail-patient">部位と程度（MMTなど）</th>
-      <th class="detail-patient">要因</th>
       </tr>
       <tr>
       <td class="detail-value"><%= @patient.muscle_weakness %></td>
+      </tr>
+      <tr>
+
+      <th class="detail-patient">要因</th>
+      </tr>
+      <tr>
       <td class="detail-value"><%= @patient.muscle_weakness_factor %></td>
       </tr>
    </tbody>
@@ -350,24 +371,36 @@
          <table class="detail-table-4">
 	<tbody>
         <tr>
-          <th class="detail-patient">重心線</th>
+          <th colspan="2" class="detail-patient">重心線</th>
+          </tr>
+          <tr>
           <th class="detail-patient">足底との関係</th>
-          <td class="detail-value"><%= @patient.relationship_sole.name %></td>
-          <th class="detail-patient">左右差</th>
-          <td class="detail-value"><%= @patient.left_right_difference.name %></td>
+          <th class="detail-patient">左右差</th>   
         </tr>
         <tr>
-          <th class="detail-patient">アライメント</th>
+        <td class="detail-value"><%= @patient.relationship_sole.name %></td>
+        <td class="detail-value"><%= @patient.left_right_difference.name %></td>
+        </tr>
+        <tr>
+          <th colspan="2" class="detail-patient">アライメント</th>
+          </tr>
+          <tr>
           <th class="detail-patient">程度</th>
-          <td class="detail-value"><%= @patient.alignment.name %></td>
-          <th class="detail-patient">コメント</th>
-          <td class="detail-value"><%= @patient.alignment_comment %></td>
+          <th class="detail-patient">コメント</th> 
         </tr>
         <tr>
-          <th class="detail-patient">筋緊張</th>
-          <th class="detail-patient">準備的姿勢筋緊張</th>
+        <td class="detail-value"><%= @patient.alignment.name %></td>
+        <td class="detail-value"><%= @patient.alignment_comment %></td>
+       </tr>
+       <tr>
+          <th colspan="2" class="detail-patient">筋緊張</th>
+          </tr>
+          <tr>
+          <th class="detail-patient">準備的姿勢筋緊張</th>  
+          <th class="detail-patient">動作への影響</th>       
+          </tr>
+          <tr>
           <td class="detail-value"><%= @patient.postural_tension.name %></td>
-          <th class="detail-patient">動作への影響</th>
           <td class="detail-value"><%= @patient.impact.name %></td>
         </tr>
       </tbody>
@@ -396,8 +429,10 @@
       <td class="detail-value"><%= @patient.left_tmd %></td>
       </tr>
       <tr>
-      <th class="detail-patient">機能的脚長差</th>
-      <td class="detail-value"><%= @patient.foot_length_comment %></td>
+      <th colspan="3" class="detail-patient">機能的脚長差</th>
+      </tr>
+      <tr>
+      <td colspan="3" class="detail-value"><%= @patient.foot_length_comment %></td>
       </tr>
    </tbody>
     </table>
@@ -409,32 +444,43 @@
          <table class="detail-table-5">
       <tbody>
         <tr>
-          <th class="detail-patient">歩行速度</th>
           <th class="detail-patient">速度</th>
-          <td class="detail-value"><%= @patient.speed %></td>
-          <th class="detail-patient">最大２歩幅</th>
-          <td class="detail-value"><%= @patient.stride %></td>
-          <th class="detail-patient">耐久性</th>
-          <td class="detail-value"><%= @patient.durability %></td>
+          <th class="detail-patient">最大２歩幅</th>  
+          <th class="detail-patient">耐久性</th> 
         </tr>
         <tr>
-          <th class="detail-patient">歩行の動作</th>
+        <td class="detail-value"><%= @patient.speed %></td>
+        <td class="detail-value"><%= @patient.stride %></td>
+        <td class="detail-value"><%= @patient.durability %></td>
+        </tr>
+        <tr>
+          <th colspan="2" class="detail-patient">歩行の動作</th>
+          </tr>
+          <tr>
           <th class="detail-patient">パターン</th>
-          <td class="detail-value"><%= @patient.walking_pattern %></td>
           <th class="detail-patient">非麻痺側下肢の位置</th>
-          <td class="detail-value"><%= @patient.foot_position %></td>
         </tr>
         <tr>
-          <th class="detail-patient">安定性</th>
-          <th class="detail-patient">身体的動揺</th>
-          <td class="detail-value"><%= @patient.upset.name %></td>
-          <th class="detail-patient">冗長性</th>
-          <td class="detail-value"><%= @patient.redundancy.name %></td>
-          <th class="detail-patient">応用性</th>
-          <td class="detail-value"><%= @patient.applicability.name %></td>
+        <td class="detail-value"><%= @patient.walking_pattern %></td>
+        <td class="detail-value"><%= @patient.foot_position %></td>
         </tr>
         <tr>
-          <th class="detail-patient">歩容</th>
+          <th colspan="3" class="detail-patient">安定性</th>
+          </tr>
+          <tr>
+          <th class="detail-patient">身体的動揺</th>  
+          <th class="detail-patient">冗長性</th>          
+          <th class="detail-patient">応用性</th>    
+        </tr>
+        <tr>
+        <td class="detail-value"><%= @patient.upset.name %></td>
+        <td class="detail-value"><%= @patient.redundancy.name %></td>
+        <td class="detail-value"><%= @patient.applicability.name %></td>
+        </tr>
+        <tr>
+          <th colspan="2" class="detail-patient">歩容</th>
+          </tr>
+          <tr>
           <th class="detail-patient">残存機能の活用性</th>
           <td class="detail-value"><%= @patient.gait.name %></td>
         </tr>
@@ -449,10 +495,14 @@
       <tbody>
         <tr>
           <th class="detail-patient">程度（長谷川式スケール、MMSEなど）</th>
+          </tr>
+          <tr>
           <td class="detail-value"><%= @patient.dementia_degree %></td>
         </tr>
         <tr>
           <th class="detail-patient">日常生活への影響</th>
+          </tr>
+          <tr>
           <td class="detail-value"><%= @patient.impact_daily_life %></td>
         </tr>
       </tbody>
