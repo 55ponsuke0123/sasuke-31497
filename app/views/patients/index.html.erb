@@ -2,15 +2,21 @@
   <div class='side-bar'>
     <div class='side-bar-header'>
       <div class='header-title'>
-       SASUKE<div class='sub-title'>作業療法評価アプリ</div>
+       SASUKE<div class='sub-title'>ＯＴ意見交換掲示板</div>
       </div>
     </div>
   <div class='side-bar-contents'>
-      <% if user_signed_in? %>
+  <div class="search-patient">
+  <%= form_with(url: search_patients_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "疾患を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+  </div>
+<% end %>
+      <% if user_signed_in? %> 
        <% @patients.each do |patient| %>
         <%= link_to "#{patient.name}さん", patient_path(patient.id), class: "patient-detail" %><br />
       <% end %>
-    <% end %>
+     <% end %>
     </div>
     </div>
 
@@ -45,7 +51,8 @@
     <% if user_signed_in? %>
      <div class='user-name'>  
       <div class='user-therapist-name'>
-        <%= "お疲れ様です、#{current_user.therapist_name}さん" %>
+      <%= "お疲れ様です、" %>
+        <%= link_to "#{current_user.therapist_name}さん", user_path(current_user), class: :greeting_link %>
       </div>
      </div>
     <% end %>

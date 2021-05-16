@@ -51,20 +51,6 @@
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">郵便番号</label>
-          <span class="indispensable">任意</span>
-        </div>
-        <%= f.text_field :postal_code, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
-      </div>
-      <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">住所</label>
-          <span class="indispensable">任意</span>
-        </div>
-        <%= f.text_field :address, class:"input-default", id:"address", placeholder:"例）鹿児島県鹿児島市"%>
-      </div>
-      <div class="form-group">
-        <div class='form-text-wrap'>
           <label class="form-text">同居家族の有無</label>
           <span class="indispensable">任意</span>
         </div>
@@ -92,6 +78,13 @@
         <%= f.text_field :surgical_history, class:"input-default", id:"surgical_history", placeholder:"例）右股関節人工骨頭置換術"%>
       </div>
       <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">担当セラピスト</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :therapist_in_charge, class:"input-default", id:"therapist_in_charge", placeholder:"例）田中太郎"%>
+      </div>
+      <div class="form-group">
         <div class='form-text'>
         画像等
       </div>
@@ -116,7 +109,7 @@
           <label class="form-text">基本動作</label>
         </div>
         <div class='detail-list-1'>
-         <table class="detail-table-1">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">寝返り</th>
@@ -153,7 +146,7 @@
         <label class="form-text">ADL -Barthel Index-</label>
         </div>
         <div class='detail-list-2'>
-         <table class="detail-table-2">
+         <table class="detail-table">
       <tbody>
         <tr>
           <th class="detail-patient">食事</th>
@@ -206,7 +199,7 @@
           <label class="form-text">ADL -機能的自立度評価表（FIM）-</label>
         </div>
         <div class='detail-list-3'>
-         <table class="detail-table-3">
+         <table class="detail-table">
       <tbody>
         <tr>
           <th rowspan="14" class="detail-patient">運動項目</th>
@@ -299,7 +292,7 @@
           <label class="form-text">BrunnstromStage</label>
         </div>
         <div class='detail-list-12'>
-         <table class="detail-table-12">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">右上肢</th>
@@ -332,7 +325,7 @@
           <label class="form-text">疼痛</label>
         </div>
         <div class='detail-list-7'>
-         <table class="detail-table-7">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th colspan="3" class="detail-patient">部位</th>
@@ -363,7 +356,7 @@
           <label class="form-text">感覚異常</label>
         </div>
         <div class='detail-list-8'>
-         <table class="detail-table-8">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">部位と程度（検査方法など）</th>
@@ -383,7 +376,7 @@
           <label class="form-text">可動域制限</label>
         </div>
         <div class='detail-list-9'>
-         <table class="detail-table-9">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th colspan="3" class="detail-patient">部位と程度</th>
@@ -405,7 +398,7 @@
           <label class="form-text">筋力低下</label>
         </div>
         <div class='detail-list-10'>
-         <table class="detail-table-10">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">部位と程度（MMTなど）</th>
@@ -426,7 +419,7 @@
           <label class="form-text">姿勢</label>
         </div>
         <div class='detail-list-4'>
-         <table class="detail-table-4">
+         <table class="detail-table">
 	<tbody>
         <tr>
         <th colspan="2" class="detail-patient">重心線</th>
@@ -468,7 +461,7 @@
           <label class="form-text">脚長差</label>
         </div>
         <div class='detail-list-13'>
-         <table class="detail-table-13">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">右SMD</th>
@@ -487,8 +480,9 @@
       <td class="detail-value"><%= f.text_field :left_tmd, class:"input-default", id:"left_tmd" %></td>
       </tr>
       <tr>
-      <th class="detail-patient">機能的脚長差</th>
-      <td class="detail-value"><%= f.text_field :foot_length_comment, class:"input-default", id:"foot_length_comment" %></td>
+      <th colspan="3" class="detail-patient">機能的脚長差</th>
+      </tr>
+      <td colspan="3" class="detail-value"><%= f.text_field :foot_length_comment, class:"input-default", id:"foot_length_comment" %></td>
       </tr>
    </tbody>
     </table>
@@ -497,7 +491,7 @@
           <label class="form-text">歩行</label>
         </div>
         <div class='detail-list-5'>
-         <table class="detail-table-5">
+         <table class="detail-table">
       <tbody>
         <tr>
           <th class="detail-patient">速度</th>
@@ -547,7 +541,7 @@
           <label class="form-text">認知・精神機能</label>
         </div>
         <div class='detail-list-6'>
-         <table class="detail-table-6">
+         <table class="detail-table">
       <tbody>
         <tr>
           <th class="detail-patient">程度（長谷川式スケール、MMSEなど）</th>
@@ -572,7 +566,7 @@
           <label class="form-text">協調性</label>
         </div>
         <div class='detail-list-11'>
-         <table class="detail-table-11">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">部位と程度</th>

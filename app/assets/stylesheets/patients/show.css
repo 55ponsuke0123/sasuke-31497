@@ -1,11 +1,23 @@
-.patient-show {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5vh 0;
+.detail-table {
+  width: 800px;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.patient-explain-box {
-  text-align: center;
+.patient-edit-btn {
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.patient-destroy {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.comment-default {
+  width: 800px;
+}
+
+

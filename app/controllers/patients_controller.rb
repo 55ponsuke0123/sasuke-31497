@@ -1,8 +1,9 @@
 class PatientsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
 
+ 
   def index
-    @patients = Patient.includes(:user)
+    user = current_user
+    @patients = Patient.includes(:user).order(created_at: :desc) 
   end
 
   def new
@@ -11,6 +12,7 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(patient_params)
+    @patient.user_id = current_user.id
     if @patient.save
       render :create
     else
@@ -20,6 +22,12 @@ class PatientsController < ApplicationController
 
   def show 
     @patient = Patient.find(params[:id])
+    @comment = Comment.new
+    @comments = @patient.comments.includes(:user)
+  end
+
+  def search
+    @patients = Patient.search(params[:keyword])
   end
 
   def edit
@@ -50,12 +58,11 @@ class PatientsController < ApplicationController
       :age, :sex_id,
        :height,
         :weight,
-         :postal_code,
-          :address, 
           :family,
            :disease_name,
             :medical_history,
              :surgical_history,
+             :therapist_in_charge,
              :image,
              :turn_over_id,
       :moving_on_bed_id,

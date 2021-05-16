@@ -1,5 +1,6 @@
 class Patient < ApplicationRecord
   belongs_to :user
+  has_many :comments
   has_one_attached :image
 
   validates :sex_id, presence: true
@@ -11,11 +12,20 @@ class Patient < ApplicationRecord
           with_options presence: true, format: { with: VALID_ZENKAKU_REGEX } do
           validates :name
           validates :disease_name
-          validates :medical_history        
+          validates :medical_history 
+          validates :therapist_in_charge       
           end
 
           def was_attached?
             self.image.attached?
+          end
+
+          def self.search(search)
+            if search != ""
+              Patient.where(['disease_name LIKE(?)', "%#{search}%"])
+            else
+              Patient.all
+            end
           end
 
           

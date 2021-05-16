@@ -1,0 +1,22 @@
+.detail-table {
+  width: 800px;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.detail-user {
+  width: 50%;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value {
+  width: 50%;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}

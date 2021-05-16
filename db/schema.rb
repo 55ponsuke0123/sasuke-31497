@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_151344) do
+ActiveRecord::Schema.define(version: 2021_05_16_051530) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,14 +33,20 @@ ActiveRecord::Schema.define(version: 2021_05_12_151344) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "patient_id"
+    t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "age", null: false
     t.integer "sex_id", null: false
     t.integer "height"
     t.integer "weight"
-    t.string "postal_code"
-    t.string "address"
     t.string "family"
     t.string "disease_name", null: false
     t.string "medical_history", null: false
@@ -132,6 +138,7 @@ ActiveRecord::Schema.define(version: 2021_05_12_151344) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "moving_on_bed_id"
+    t.string "therapist_in_charge"
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 

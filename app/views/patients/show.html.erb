@@ -6,13 +6,17 @@
 
 
     <div class="patient-explain-box">
-      <span><%= @patient.disease_name %></span>
+      <span><%= "#{@patient.therapist_in_charge}さん担当" %></span>
     </div>
     <div class='form-1-1'>
         <label class="form-text">基本情報</label>
         </div>
     <table class="detail-table">
       <tbody>
+      <tr>
+          <th class="detail-patient">リハビリテーション主疾患</th>
+          <td class="detail-value"><%= @patient.disease_name %></td>
+        </tr>
         <tr>
           <th class="detail-patient">年齢</th>
           <td class="detail-value"><%= @patient.age %></td>
@@ -24,15 +28,6 @@
         <tr>
           <th class="detail-patient">体重</th>
           <td class="detail-value"><%= @patient.weight %></td>
-        </tr>
-
-        <tr>
-          <th class="detail-patient">郵便番号</th>
-          <td class="detail-value"><%= @patient.postal_code %></td>
-        </tr>
-        <tr>
-          <th class="detail-patient">住所</th>
-          <td class="detail-value"><%= @patient.address %></td>
         </tr>
         <tr>
           <th class="detail-patient">同居家族</th>
@@ -57,7 +52,7 @@
           <label class="form-text">基本動作</label>
         </div>
         <div class='detail-list-1'>
-      <table class="detail-table-1">
+      <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">寝返り</th>
@@ -94,7 +89,7 @@
         <label class="form-text">ADL -Barthel Index-</label>
         </div>
         <div class='detail-list-2'>
-    <table class="detail-table-2">
+    <table class="detail-table">
       <tbody>
       <tr>
           <th class="detail-patient">食事</th>
@@ -147,7 +142,7 @@
           <label class="form-text">ADL -機能的自立度評価表（FIM）-</label>
         </div>
          <div class='detail-list-3'>
-<table class="detail-table-3">
+<table class="detail-table">
       <tbody>
         <tr>
           <th rowspan="14" class="detail-patient">運動項目</th>
@@ -240,7 +235,7 @@
           <label class="form-text">BrunnstromStage</label>
         </div>
         <div class='detail-list-12'>
-         <table class="detail-table-12">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">右上肢</th>
@@ -273,7 +268,7 @@
           <label class="form-text">疼痛</label>
         </div>
         <div class='detail-list-7'>
-         <table class="detail-table-7">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th colspan="3" class="detail-patient">部位</th>
@@ -304,7 +299,7 @@
           <label class="form-text">感覚異常</label>
         </div>
         <div class='detail-list-8'>
-         <table class="detail-table-8">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">部位と程度（検査方法など）</th>
@@ -324,7 +319,7 @@
           <label class="form-text">可動域制限</label>
         </div>
         <div class='detail-list-9'>
-         <table class="detail-table-9">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th colspan="3" class="detail-patient">部位と程度</th>
@@ -346,7 +341,7 @@
           <label class="form-text">筋力低下</label>
         </div>
         <div class='detail-list-10'>
-         <table class="detail-table-10">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">部位と程度（MMTなど）</th>
@@ -368,7 +363,7 @@
           <label class="form-text">姿勢</label>
         </div>
         <div class='detail-list-4'>
-         <table class="detail-table-4">
+         <table class="detail-table">
 	<tbody>
         <tr>
           <th colspan="2" class="detail-patient">重心線</th>
@@ -410,7 +405,7 @@
           <label class="form-text">脚長差</label>
         </div>
         <div class='detail-list-13'>
-         <table class="detail-table-13">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">右SMD</th>
@@ -441,7 +436,7 @@
           <label class="form-text">歩行</label>
         </div>
         <div class='detail-list-5'>
-         <table class="detail-table-5">
+         <table class="detail-table">
       <tbody>
         <tr>
           <th class="detail-patient">速度</th>
@@ -491,7 +486,7 @@
           <label class="form-text">認知・精神機能</label>
         </div>
         <div class='detail-list-6'>
-         <table class="detail-table-6">
+         <table class="detail-table">
       <tbody>
         <tr>
           <th class="detail-patient">程度（長谷川式スケール、MMSEなど）</th>
@@ -510,7 +505,7 @@
       </div>
         <div class='higher-brain-dysfunction-comment'>
           <label class="form-text">高次脳機能障害</label>
-        <table class="detail-table-14">
+        <table class="detail-table">
       <tbody>
         <tr>
           <td class="detail-value"><%= @patient.higher_brain_dysfunction_comment %></td>
@@ -521,7 +516,7 @@
           <label class="form-text">協調性</label>
         </div>
         <div class='detail-list-11'>
-         <table class="detail-table-11">
+         <table class="detail-table">
       <tbody>
       <tr>
       <th class="detail-patient">部位と程度</th>
@@ -536,7 +531,7 @@
       </div>
       <div class='others'>
           <label class="form-text">その他（特記事項）</label>
-        <table class="detail-table-15">
+        <table class="detail-table">
       <tbody>
         <tr>
           <td class="detail-value"><%= @patient.others %></td>
@@ -545,21 +540,49 @@
     </table>
       <div class='generalization'>
           <label class="form-text">総括</label>
-        <table class="detail-table-16">
+        <table class="detail-table">
       <tbody>
         <tr>
           <td class="detail-value"><%= @patient.generalization %></td>
         </tr>
       </tbody>
     </table>
-<% if user_signed_in? %> 
+    </div>
+<% if user_signed_in? && @patient.user_id == current_user.id %> 
          <div class='three-btn'>
            <%= link_to "編集する", edit_patient_path(@patient), method: :get, class: "patient-edit-btn" %>
-           <%= button_to "削除する", patient_path(@patient), method: :delete, class: "patient-destroy" %> 
+           <%= link_to "削除する", patient_path(@patient), method: :delete, class: "patient-destroy" %> 
           </div>
         <% end %>  
+    </div>
+  </div>
+    <div class="container-comments">
+  <% if user_signed_in? %>
+  <div class="comment-forms">
+  <h4>＜コメントする＞</h4>
+  <%= form_with(model: [@patient, @comment], local: true) do |form| %>
+  <%= form.text_area :text, class:"comment-default", placeholder: "コメントを記入してください", rows: "2" %>
+  </div>
+  <div class=submit-bth>
+  <%= form.submit "コメントを送信" %>
+  </div>
+  <% end %>
+  <% else %>
+  <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+  </strong>
+  <% end %>
+  <div class="comments">
+  <h4>＜コメント一覧＞</h4>
+  </div>
+  <div class="comments-content">
+    <% @comments.each do |comment| %>
+    <h4>
+    <strong><%= link_to comment.user.therapist_name, "/users/#{comment.user_id}" %>：</strong>
+    <%= comment.text %>
+    </h4>
+    </div>
+<% end %>
     <div class='second-action'>
         <%=link_to "トップへ戻る", root_path, class: :top_btn%> 
         </div>
-    </div>
-  </div>
+    

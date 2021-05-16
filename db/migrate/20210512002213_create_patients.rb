@@ -11,7 +11,7 @@ class CreatePatients < ActiveRecord::Migration[6.0]
       t.string    :family
       t.string    :disease_name,         null: false
       t.string    :medical_history,      null: false
-      t.string    :surgical_history    
+      t.string    :surgical_history  
       t.integer   :turn_over_id
       t.integer   :get_up_id
       t.integer   :sitting_position_id
