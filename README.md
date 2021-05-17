@@ -46,13 +46,16 @@ email:coba@coba.ne.jp, password:coba123
 
 <挙動確認動画>
 1.新規登録
-![movie1](https://user-images.githubusercontent.com/74514503/114265072-bcfd8500-9a29-11eb-9d5f-2cb50a275c6a.gif)
+![sasuke-31497_1](https://user-images.githubusercontent.com/74514503/118439344-c234aa80-b720-11eb-8c6c-7434c89933d7.gif)
 
-2.連絡帳記述〜送信
-![movie2](https://user-images.githubusercontent.com/74514503/114265160-46ad5280-9a2a-11eb-89c5-2064dee63755.gif)
+2.ログイン
 
-3.ログイン
-![movie3](https://user-images.githubusercontent.com/74514503/114265211-8411e000-9a2a-11eb-9d87-1aa6a23b9551.gif)
+3.患者登録
+
+4.コメント投稿
+
+5.検索機能
+
 
 
 
