@@ -11,7 +11,7 @@ https://sasuke-31497.herokuapp.com
 （Basic認証）
 ID:admin, Pass:2222
 （ユーザー）
-email:coba@coba.ne.jp, password:coba123
+email:coba@coba.com, password:cobacoba123
 
 # 利用方法
 新規登録後、患者の情報やリハビリを行う上で必要な主な評価・検査を登録する。コメントを交換し、治療のアドバイスなどをもらう。患者情報は必要に応じて編集・削除も可能。
@@ -23,14 +23,14 @@ email:coba@coba.ne.jp, password:coba123
 優先度:3
 機能:ActiveStrage
 目的:レントゲンなどの画像も添付できるようにするため
-詳細:例えば脳血管疾患などは、梗塞や出血の箇所で症状や予想される後遺症（障害）が全く異なるため、医療情報をより充実させるためにも、画像は必要不可欠と言える。
+詳細:脳血管疾患などは病巣の位置で症状や予想される後遺症（障害）が全く異なるため、医療情報をより充実させるためにも、画像は必要不可欠と言える
 ユースケース:セラピストが症状や障害の見立てをしやすく、かつ計画書やプログラム立案に活かせるようにする
 所要時間:1h
 
 優先度:2
 機能:検索機能
 目的:情報が欲しい疾患名を入力し、結果を表示できるようにするため
-詳細:リハ対象の疾患は多数あるが、なかには珍しい症例を持つこともあるため、疾患名の入力ですぐに探し出せるようにする。
+詳細:リハ対象の疾患は多数あるが、なかには珍しい症例を持つこともあるため、疾患名の入力ですぐに探し出せるようにする
 ユースケース:セラピストが自身の受け持ち患者の疾患や、特に勉強している疾患の情報を素早く手に入れられるようにする
 所要時間:1h
 
@@ -45,8 +45,9 @@ email:coba@coba.ne.jp, password:coba123
 ユーザー新規登録を行う。ユーザー登録が完了したら患者情報を登録し、コメントの交換を行う。なお患者登録とコメント投稿はログインしていないと行えない。
 
 <挙動確認動画>
-1.新規登録
-![sasuke-31497_1](https://user-images.githubusercontent.com/74514503/118439344-c234aa80-b720-11eb-8c6c-7434c89933d7.gif)
+新規登録→
+![sasuke](https://user-images.githubusercontent.com/74514503/118489812-39396580-b758-11eb-8fb4-fd7818a61826.gif)
+
 
 2.ログイン
 
@@ -188,3 +189,16 @@ has_many :comments
 ### Association
 belongs_to :user
 belongs_to :patient
+
+# ローカルでの動作方法
+1.git clone https://github.com/55ponsuke0123/sasuke-31497.git
+2.cd ~/projects
+3.cd sasuke-31497
+4.bundle install
+5.yarn install
+6.rails db:create
+7.rails db:migrate
+8.rails s
+
+ruby 2.6.5p114
+Rails 6.0.3.5
