@@ -57,6 +57,8 @@ email:coba@coba.com, password:cobacoba123
 4.コメント投稿
 ![sasuke_3](https://user-images.githubusercontent.com/74514503/118512604-ec608980-b76d-11eb-8790-88ebec17f3dd.gif)
 
+![Videotogif](https://user-images.githubusercontent.com/74514503/118569492-02456d00-b7b5-11eb-9f58-a067d3d4c3db.gif)
+
 
 
 # データベース設計
