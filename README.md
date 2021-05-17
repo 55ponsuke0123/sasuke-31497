@@ -45,19 +45,17 @@ email:coba@coba.com, password:cobacoba123
 ユーザー新規登録を行う。ユーザー登録が完了したら患者情報を登録し、コメントの交換を行う。なお患者登録とコメント投稿はログインしていないと行えない。
 
 <挙動確認動画>
-新規登録→
-![sasuke](https://user-images.githubusercontent.com/74514503/118489812-39396580-b758-11eb-8fb4-fd7818a61826.gif)
-
+1.新規登録
+![sasuke-31497_1](https://user-images.githubusercontent.com/74514503/118439344-c234aa80-b720-11eb-8c6c-7434c89933d7.gif)
 
 2.ログイン
+![sasuke_4-min](https://user-images.githubusercontent.com/74514503/118512422-bf13db80-b76d-11eb-8c4d-245f09f8358b.gif)
 
 3.患者登録
+![sasuke_2](https://user-images.githubusercontent.com/74514503/118512847-1f0a8200-b76e-11eb-8251-11577c7de1ac.gif)
 
 4.コメント投稿
-
-5.検索機能
-
-
+![sasuke_3](https://user-images.githubusercontent.com/74514503/118512604-ec608980-b76d-11eb-8790-88ebec17f3dd.gif)
 
 
 
@@ -201,4 +199,4 @@ belongs_to :patient
 8.rails s
 
 ruby 2.6.5p114
-Rails 6.0.3.5
+Rails 6.0.3.7
