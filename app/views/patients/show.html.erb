@@ -2,7 +2,7 @@
   <div class="patient-box">
     <h4 class="name">カルテネーム:<%= @patient.name %></h3>
     <div class="patient-explain-box">
-      <%= link_to "#{@patient.therapist_in_charge}", user_path(current_user), class: :greeting_link %>さん担当
+      <%= link_to "#{@patient.therapist_in_charge}", user_path(@patient.user), class: :greeting_link %>さん担当
     </div>
     <div class='form-1-1'>
         <label class="form-text">基本情報</label>
