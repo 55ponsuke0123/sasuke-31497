@@ -3,6 +3,13 @@ class CommentsController < ApplicationController
     comment = Comment.create(comment_params)
       redirect_to "/patients/#{comment.patient.id}" 
   end
+
+   def show
+    @comments = Comments.all
+    @comment = Comment.new
+   end
+
+
   
   private
   def comment_params
