@@ -52,7 +52,7 @@
      <div class='user-name'>  
       <div class='user-therapist-name'>
       <%= "お疲れ様です、" %>
-        <%= link_to "#{current_user.therapist_name}さん", user_path(current_user), class: :greeting_link %>
+        <%= link_to "#{current_user.therapist_name}", user_path(current_user), class: :greeting_link %>さん
       </div>
      </div>
     <% end %>

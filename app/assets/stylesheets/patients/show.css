@@ -1,3 +1,11 @@
+.patient-show {
+  text-align: center;
+}
+
+.name {
+  font-size: 20px;
+}
+
 .detail-table {
   width: 800px;
   table-layout: fixed;
@@ -5,16 +13,43 @@
   margin-right: auto;
 }
 
+.two-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.two-btn a{
+  text-decoration: none;
+}
+
 .patient-edit-btn {
+  display: block;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #1b9aaa;
+  border: #1b9aaa;;
+  font-size: 24px;
+  color: white;
+  padding: 2vh 10vw;
 }
 
 .patient-destroy {
+  display: block;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #1b9aaa;
+  border: #1b9aaa;;
+  font-size: 24px;
+  color: white;
+  padding: 2vh 10vw;
 }
 
+
+.comments-content {
+  text-align: center;
+}
 
 .comment-default {
   width: 800px;

@@ -1,8 +1,10 @@
 class PatientsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
  
   def index
-    user = current_user
     @patients = Patient.includes(:user).order(created_at: :desc) 
   end
 
@@ -12,7 +14,6 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(patient_params)
-    @patient.user_id = current_user.id
     if @patient.save
       render :create
     else
@@ -21,7 +22,6 @@ class PatientsController < ApplicationController
   end
 
   def show 
-    @patient = Patient.find(params[:id])
     @comment = Comment.new
     @comments = @patient.comments.includes(:user)
   end
@@ -31,20 +31,17 @@ class PatientsController < ApplicationController
   end
 
   def edit
-    @patient = Patient.find(params[:id])
   end
 
   def update
-    @patient = Patient.find(params[:id])
     if @patient.update(patient_params)
-      redirect_to root_path
+      redirect_to patient_path
      else
      render :edit
      end
   end
 
   def destroy
-    @patient = Patient.find(params[:id])
     if @patient.destroy 
       redirect_to root_path
     end
@@ -52,6 +49,9 @@ class PatientsController < ApplicationController
   
   private 
 
+  def set_item
+    @patient = Patient.find(params[:id])
+  end
 
   def patient_params
     params.require(:patient).permit(:name, 
@@ -148,6 +148,12 @@ class PatientsController < ApplicationController
       :sense_cooperation_impact,
        :others,
       :generalization).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    if @patient.user_id != current_user.id
+      redirect_to action: :index
+    end
   end
 
 

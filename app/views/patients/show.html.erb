@@ -1,12 +1,8 @@
 <div class="patient-show">
   <div class="patient-box">
-    <h4 class="name">
-      <%= @patient.name %>
-    </h4>
-
-
+    <h4 class="name">カルテネーム:<%= @patient.name %></h3>
     <div class="patient-explain-box">
-      <span><%= "#{@patient.therapist_in_charge}さん担当" %></span>
+      <%= link_to "#{@patient.therapist_in_charge}", user_path(current_user), class: :greeting_link %>さん担当
     </div>
     <div class='form-1-1'>
         <label class="form-text">基本情報</label>
@@ -549,7 +545,7 @@
     </table>
     </div>
 <% if user_signed_in? && @patient.user_id == current_user.id %> 
-         <div class='three-btn'>
+         <div class='two-btn'>
            <%= link_to "編集する", edit_patient_path(@patient), method: :get, class: "patient-edit-btn" %>
            <%= link_to "削除する", patient_path(@patient), method: :delete, class: "patient-destroy" %> 
           </div>
@@ -585,4 +581,6 @@
     <div class='second-action'>
         <%=link_to "トップへ戻る", root_path, class: :top_btn%> 
         </div>
+        </div>
+</div>
     

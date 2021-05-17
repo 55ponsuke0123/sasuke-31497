@@ -5,13 +5,15 @@
   
  <div class="contents-row">
   <% @patients.each do |patient| %>
-  <li>
+  <div class="patient-disease-name">
  <a href="/patients/<%= patient.id %>">
    <%= patient.disease_name %>
+</div>
+<div class="therapist-in-charge">
     <a href="/users/<%= patient.user.id %>">
-    <%= patient.user.therapist_name %>
+    <%= patient.therapist_in_charge %>
       </a>
-  </li>
+      </div>
   <% end %>
  </div>
  <div class='search-action'>

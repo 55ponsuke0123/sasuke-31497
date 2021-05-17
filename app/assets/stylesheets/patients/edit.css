@@ -1,65 +1,12 @@
-.patient-show {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5vh 0;
-}
-
-.patient-box {
-  background-color: #FFF;
-  width: 70vw;
-  min-width: 1200px;
-  padding: 10vh 15vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.patient-box>.name {
+.form_header h2 {
+  font-size: 40px;
   font-weight: bold;
-  font-size: 25px;
 }
 
-.patient-explain-box {
-  font-size: 20px;
-}
-
-
-
-.click-upload {
+.col-sm-1, .col-sm-2 {
+  display: inline-block;
   text-align: center;
-}
-
-.patient-edit-btn {
-  text-align: center;
-  background-color: #1b9aaa;
-  font-size: 24px;
-  color: white;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
-
-
-
-.patient-destroy {
-  background-color: #1b9aaa;
-  text-align: center;
-  font-size: 24px;
-  color: white;
-  border: #1b9aaa;;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
-
-.patient-evaluate-btn {
-  text-align: center;
-  background-color: #1b9aaa;
-  font-size: 24px;
-  color: white;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
+  }
 
 .detail-table {
   width: 800px;
@@ -85,26 +32,6 @@
 }
 
 
-
-.three-btn {
-  display: flex;
-  flex-direction: column;
-}
-
-.three-btn a {
-    text-decoration: none;
-}
-
-.transaction-title-text {
-  font-size: 40px;
-  text-align: center;
- }
- 
-.evaluation-form {
-  display: flex;
-  padding: auto;
-}
-
 .select-box {
   width: 100px;
 }
@@ -124,32 +51,7 @@
 .evaluation-btn a{
   text-decoration: none;
 }
-.form_header h2 {
-  font-size: 40px;
-  font-weight: bold;
-}
 
-h2::first-letter {
-  color: lightseagreen;
-  font-size: 50px;
-}
 
-.col-sm-1, .col-sm-2 {
-display: inline-block;
-text-align: center;
-}
 
-.new-patient-btn {
-text-align: center;
-}
-
-.patient-btn {
-  background: #1b9aaa;
-  width: 200px;
-  padding: 0.5em;
-  color: #fff;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-}
 
