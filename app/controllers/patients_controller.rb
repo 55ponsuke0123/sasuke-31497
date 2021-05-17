@@ -17,6 +17,7 @@ class PatientsController < ApplicationController
     if @patient.save
       render :create
     else
+      flash.now[:alert] = '未入力の項目があります'
       render :new
     end
   end
