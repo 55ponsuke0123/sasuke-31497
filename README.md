@@ -9,9 +9,9 @@ https://sasuke-31497.herokuapp.com
 
 # テスト用アカウント
 （Basic認証）  
-ID:admin  Pass:2222  
+ID:admin, Pass:2222  
 （ユーザー）  
-email:coba@coba.com   password:cobacoba123
+email:coba@coba.com, password:cobacoba123
 
 # 利用方法
 新規登録後、患者の情報やリハビリを行う上で必要な主な評価・検査を登録する。コメントを交換し、治療のアドバイスなどをもらう。患者情報は必要に応じて編集・削除も可能。
